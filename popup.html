@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flow 2K Downloader</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Flow 2K Downloader</h1>
+      <span id="tabStatus" class="badge">Checking...</span>
+    </header>
+
+    <div class="controls">
+      <button id="scanBtn" class="btn secondary">Scan Page</button>
+      <button id="startBtn" class="btn primary">Start 2K</button>
+      <button id="stopBtn" class="btn danger" disabled>Stop</button>
+    </div>
+
+    <div class="setting">
+      <label for="folderInput">Subfolder (inside Brave Downloads)</label>
+      <input id="folderInput" type="text" placeholder="flow-2k" value="flow-2k" />
+    </div>
+
+    <div class="setting">
+      <label for="delayRange">Delay: <strong id="delayVal">3.0s</strong></label>
+      <input id="delayRange" type="range" min="1000" max="10000" step="500" value="3000" />
+    </div>
+
+    <div class="progress-box">
+      <div class="progress-stats">
+        <span id="progressText">0 / 0</span>
+        <span id="failedText">Failed: 0</span>
+      </div>
+      <div class="bar-bg">
+        <div id="barFill" class="bar-fill"></div>
+      </div>
+    </div>
+
+    <div class="log-header">
+      <span>Debug Selector Log</span>
+      <div class="log-actions">
+        <button id="copyLogsBtn" class="link-btn">Copy</button>
+        <button id="clearLogsBtn" class="link-btn">Clear</button>
+      </div>
+    </div>
+    <pre id="logBox" class="log-box">Open labs.google/fx/tools/flow to begin.</pre>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
